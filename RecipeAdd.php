@@ -12,8 +12,10 @@ $content ="<form action='' method='post'>
         
         <label for='type'>Type: </label>
         <select class='inputField' name='ddlType'>
-            <option value='%'>All</option>
-        </select><br/>
+            <option value='%'>All</option>"
+        .$recipeController->CreateOptionValues($recipeController->GetRecipeType()).
+        
+        "</select><br/>
         
         <label for='price'>Price: </label>
         <input type='text' class='inputField' name='txtPrice'/><br/>
