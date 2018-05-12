@@ -24,7 +24,9 @@ $content ="<form action='' method='post'>
         <input type='text' class='inputField' name='txtOrigin'/><br/>
         
         <label for='image'>Image: </label>
-        <select class='inputField'name='ddlImage'></select></br>
+        <select class='inputField'name='ddlImage'>"
+        .$recipeController->GetImages().
+        "</select></br>
         
         <label for='review'>Review: </label>
         <textarea cols='70' rows='12' name='txtReview'></textarea></br>
