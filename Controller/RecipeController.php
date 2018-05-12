@@ -69,6 +69,31 @@ class RecipeController {
         return $result;
         
     }
+    
+    //Returns list of files in a folder.
+    function GetImages() {
+        //Select folder to scan
+        $handle = opendir("Images/Recipe");
+
+        //Read all files and store names in array
+        while ($image = readdir($handle)) {
+            $images[] = $image;
+        }
+
+        closedir($handle);
+
+        //Exclude all filenames where filename length < 3
+        $imageArray = array();
+        foreach ($images as $image) {
+            if (strlen($image) > 2) {
+                array_push($imageArray, $image);
+            }
+        }
+
+        //Create <select><option> Values and return result
+        $result = $this->CreateOptionValues($imageArray);
+        return $result;
+    }
    //<editor-fold desc="Set Methods">
     function InsertRecipe(){
         
