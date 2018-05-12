@@ -69,7 +69,32 @@ class RecipeController {
         return $result;
         
     }
-
+   //<editor-fold desc="Set Methods">
+    function InsertRecipe(){
+        
+    }
+    function UpdateRecipe($id){
+        
+    }
+    function DeleteRecipe($id){
+        
+    }
+    //</editor-fold>
+    
+    //<editor-fold desc="Get Methods">
+    function GetRecipeById($id){
+        $recipeModel = new RecipeModel();
+        return $recipeModel->GetRecipeById($id);
+    }
+    function GetRecipeByType($type){
+        $recipeModel = new RecipeModel();
+        return $recipeModel->GetRecipeByType($type);
+    }
+    function GetRecipeType(){
+        $recipeModel = new RecipeModel();
+        return $recipeModel->GetRecipeTypes();
+    }
+    //</editor-fold>
 }
 
 ?>
