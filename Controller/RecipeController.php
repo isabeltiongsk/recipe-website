@@ -1,8 +1,56 @@
+<script>
+    //Confirmation box for delete
+    function showConfirm(id)
+    {
+        //confirmation box
+        var c = confirm("Are you sure you want to delete this item?");
+        
+        //if true, delete item and refresh
+        if(c)
+            window.location = "RecipeOverview.php?delete=" + id;
+    }
+    
+    </script>
+
 <?php
+
 require ("Model/RecipeModel.php");
 
 //Contains non-database related function for the Recipe page
 class RecipeController {
+    
+    function CreateOverviewTable() {
+        $result = "
+            <table class='overViewTable'>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><b>Id</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Type</b></td>
+                    <td><b>Price</b></td>
+                    <td><b>Country</b></td>
+                </tr>";
+
+        $recipeArray = $this->GetRecipeByType('%');
+
+        foreach ($recipeArray as $key => $value) {
+            $result = $result .
+                    "<tr>
+                        <td><a href='RecipeAdd.php?update=$value->id'>Update</a></td>
+                        <td><a href='#' onclick='showConfirm($value->id)'>Delete</a></td>
+                        <td>$value->id</td>
+                        <td>$value->name</td>
+                        <td>$value->type</td>    
+                        <td>$value->price</td> 
+                        <td>$value->country</td>   
+                    </tr>";
+        }
+
+        $result = $result . "</table>";
+        return $result;
+    }
+
 
     function CreateRecipeDropdownList() {
         $recipeModel = new RecipeModel();
@@ -57,7 +105,7 @@ class RecipeController {
                         
 
                         <tr>
-                            <th>Origin: </th>
+                            <th>Country: </th>
                             <td>$recipe->country</td>
                         </tr>
                         
@@ -95,14 +143,38 @@ class RecipeController {
         return $result;
     }
    //<editor-fold desc="Set Methods">
-    function InsertRecipe(){
+    function InsertRecipe()
+    {
+        $name = $_POST["txtName"];
+        $type = $_POST["ddlType"];
+        $price = $_POST["txtPrice"];
+        $country = $_POST["txtCountry"];
+        $image = $_POST["ddlImage"];
+        $review = $_POST["txtReview"];
+        
+        $recipe = new RecipeEntity(-1, $name, $type, $price, $country, $image, $review);
+        $recipeModel = NEW recipeModel();
+        $recipeModel->InsertRecipe($recipe);
+        
         
     }
+    
     function UpdateRecipe($id){
+            $name = $_POST["txtName"];
+        $type = $_POST["ddlType"];
+        $price = $_POST["txtPrice"];
+        $country = $_POST["txtCountry"];
+        $image = $_POST["ddlImage"];
+        $review = $_POST["txtReview"];
+        
+        $recipe = new RecipeEntity($id, $name, $type, $price, $country, $image, $review);
+        $recipeModel = new RecipeModel();
+        $recipeModel->UpdateRecipe($id, $recipe);
         
     }
     function DeleteRecipe($id){
-        
+        $recipeModel = new RecipeModel();
+        $recipeModel->DeleteRecipe($id);
     }
     //</editor-fold>
     
