@@ -20,7 +20,7 @@ and open the template in the editor.
                     <li><a href="index.php">Home</a></li>
                     <li><a href="Recipe.php">Recipe</a></li>
                     <li><a href="#">Groceries</a></li>
-                    <li><a href="#">About</a></li>
+
                     <li><a href="registration/login.php">Login</a></li>
                 </ul>
             </nav>
