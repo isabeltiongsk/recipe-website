@@ -6,10 +6,12 @@ $recipeController = new RecipeController();
 
 $content = $recipeController->CreateOverviewTable();
 
-if(isset($_GET["delete"]))
-{
-    $recipeController->DeleteRecipe($_GET["delete"]);
-}
+
+if(isset($_GET['delete']))
+{ 
+    $recipeController->DeleteRecipe($_GET['delete']); 
+
+} $content = $recipeController->CreateOverviewTable();
 
 include './Templates.php';
 ?>
