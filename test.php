@@ -26,7 +26,7 @@ and open the template in the editor.
             </nav>
             
             <div id="content_area">
-                <?php echo $content; ?>
+                <iframe src="Grocery.html" width="100%" height="500" ></iframe>
             </div>
             
             <div id="sidebar">
