@@ -30,6 +30,7 @@ class RecipeController {
                     <td><b>Type</b></td>
                     <td><b>Price</b></td>
                     <td><b>Country</b></td>
+                    <td><b>Info</b></td>
                 </tr>";
 
         $recipeArray = $this->GetRecipeByType('%');
@@ -90,7 +91,7 @@ class RecipeController {
                         <tr>
                             <th rowspan='6' width = '150px' ><img runat = 'server' src = '$recipe->image' /></th>
                             <th width = '75px' >Name: </th>
-                            <td>$recipe->name</td>
+                            <td><a href='details.php?id={$recipe->id}'>$recipe->name</a></td>
                         </tr>
                         
                         <tr>
@@ -109,6 +110,7 @@ class RecipeController {
                             <td>$recipe->country</td>
                         </tr>
                         
+
                         <tr>
                             <td colspan='2' >$recipe->review</td>
                         </tr>                      
@@ -151,8 +153,10 @@ class RecipeController {
         $country = $_POST["txtCountry"];
         $image = $_POST["ddlImage"];
         $review = $_POST["txtReview"];
+        $ingredient = $_POST["txtIngredient"];
+        $instruction = $_POST["txtInstruction"];
         
-        $recipe = new RecipeEntity(-1, $name, $type, $price, $country, $image, $review);
+        $recipe = new RecipeEntity(-1, $name, $type, $price, $country, $image, $review,$ingredient, $instruction);
         $recipeModel = NEW recipeModel();
         $recipeModel->InsertRecipe($recipe);
         
@@ -160,14 +164,16 @@ class RecipeController {
     }
     
     function UpdateRecipe($id){
-            $name = $_POST["txtName"];
+        $name = $_POST["txtName"];
         $type = $_POST["ddlType"];
         $price = $_POST["txtPrice"];
         $country = $_POST["txtCountry"];
         $image = $_POST["ddlImage"];
         $review = $_POST["txtReview"];
+        $ingredient = $_POST["txtIngredient"];
+        $instruction = $_POST["txtInstruction"];
         
-        $recipe = new RecipeEntity($id, $name, $type, $price, $country, $image, $review);
+        $recipe = new RecipeEntity($id, $name, $type, $price, $country, $image, $review,$ingredient, $instruction);
         $recipeModel = new RecipeModel();
         $recipeModel->UpdateRecipe($id, $recipe);
         
@@ -190,6 +196,49 @@ class RecipeController {
     function GetRecipeType(){
         $recipeModel = new RecipeModel();
         return $recipeModel->GetRecipeTypes();
+    }
+    
+    function CreateRecipeDetail($id)
+    {
+        $recipeModel = new RecipeModel();
+        $recipeArray = $recipeModel->GetRecipeById($id);
+        $result = "";
+        
+        //Generate a recipeTable for each recipeEntity in array
+        foreach ($recipeArray as $key => $recipe) 
+        {
+            $result = $result .
+                    "
+                        <tr>
+                            <th rowspan='6' width = '150px' ><img runat = 'server' src = '$recipe->image' /></th>
+                            <th width = '75px' >Name: </th>
+                            <td>$recipe->name</td>
+                        </tr>
+                        
+                        <tr>
+                            <th>Type: </th>
+                            <td>$recipe->type</td>
+                        </tr>
+                        
+                        <tr>
+                            <th>Price: </th>
+                            <td>$recipe->price</td>
+                        </tr>
+                        
+
+                        <tr>
+                            <th>Country: </th>
+                            <td>$recipe->country</td>
+                        </tr>
+                        
+
+                        <tr>
+                            <td colspan='2' >$recipe->review</td>
+                        </tr>                      
+                     </table>";
+        }        
+        return $result;
+        
     }
     //</editor-fold>
 }

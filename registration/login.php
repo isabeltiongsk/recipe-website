@@ -23,9 +23,4 @@
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
-  	<p>
-  		Not yet an administrator? <a href="register.php">Sign up</a>
-  	</p>
-  </form>
-</body>
-</html>
+
