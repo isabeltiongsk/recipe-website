@@ -24,6 +24,3 @@
   		<button type="submit" class="btn" name="login_user">Login</button>
   	</div>
 
-  </form>
-</body>
-</html>
