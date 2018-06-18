@@ -10,6 +10,24 @@ body p
     line-height: 1.28;
 }
 
+h3{
+  color: #DC7633;
+}
+
+p{
+font-family: arial;
+font-size: 70px;
+}
+
+.details{
+        width:120px;
+        height:200px;
+        margin-left:40px;
+        margin-right:40px;
+        margin-bottom:30px;
+        float:left;
+}
+
 #wrapper
 {
     width: 1080px;
@@ -56,7 +74,7 @@ footer
     text-align: center;
     color: #fff;
     text-shadow: 0.1em 0.1em #333;
-    background-image: url(../Images/bar_background.jpg);
+    background-image: url(../Images/bar_background2.jpg);
 }
 
 #navigation
@@ -65,7 +83,7 @@ footer
     border: 3px solid #E3E3E3;
     margin-top: 20px;
     text-shadow: 0.1em 0.1em #333;
-    background-image: url(../Images/bar_background.jpg);
+    background-image: url(../Images/bar_background2.jpg);
 }
 
 #nav
@@ -153,4 +171,20 @@ label{
     float:left;
     width:100px;
     font-weight:bold;
+}
+
+.overViewTable
+{
+    width: 700px;
+}
+
+.overViewTable tr
+{
+    padding: 4px;
+}
+
+.overViewTable td
+{
+    padding: 4px;
+    border: 1px solid #E3E3E3;
 }
