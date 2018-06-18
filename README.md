@@ -1,4 +1,4 @@
-# recipe-website
+# About this website
 This is an assignment project for Coventry University Agile Development course<br>
 by Isabek Tiong, Myat Su Tin, Lim Wee Loon. <br>
 
