@@ -19,8 +19,8 @@ and open the template in the editor.
                 <ul id="nav">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="Recipe.php">Recipe</a></li>
-                    <li><a href="#">Groceries</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="test.php">Groceries</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li><a href="registration/login.php">Login</a></li>
                 </ul>
             </nav>
