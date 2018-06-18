@@ -1,8 +1,28 @@
 # recipe-website
-Repository for recipe website repository for agile development project
+This is an assignment project for Coventry University Agile Development course<br>
+by Isabek Tiong, Myat Su Tin, Lim Wee Loon. <br>
 
-How to run
-1.install the master branch package
-2.copy the files under your wamp/www
-3.create a new php project within the file
-4.run index.php 
+## Description
+This is a recipe website providing the features below: <br>
+For details of this project, please refer to the [assignment report](https://github.com/isabeltiongsk/recipe-website/blob/master/GroupReportv1.pdf)
+
+## Screenshots
+![alt text](https://github.com/isabeltiongsk/recipe-website/blob/master/demo/demo1.JPG) <br>
+![alt text](https://github.com/isabeltiongsk/recipe-website/blob/master/demo/demo2.JPG) <br>
+
+### Features
+* View recipes according to type(appetizer, main, dessert)
+* View recipe details (Click on recipe name)
+* GPS locator for nearest grocery shop
+* Admin page
+
+#### Inside admin page
+* CRUD of recipes
+* Upload new image
+
+## How to install
+1.Install the master branch package <br>
+2.Copy the files under your wamp/www <br>
+3.Import the sql files in the sql folder inside the database <br>
+4.Run index.php <br>
+
