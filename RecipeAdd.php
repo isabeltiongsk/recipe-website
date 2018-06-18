@@ -34,6 +34,12 @@ if(isset($_GET["update"]))
         
         <label for='review'>Review: </label>
         <textarea cols='70' rows='12' name='txtReview'>$recipe->review</textarea></br>
+            
+        <label for='ingredient'>Ingredient: </label>
+        <textarea cols='70' rows='12' name='txtIngredient'>$recipe->ingredient</textarea></br>
+            
+        <label for='instruction'>Instruction: </label>
+        <textarea cols='70' rows='12' name='txtInstruction'>$recipe->instruction</textarea></br>
         
         <input type='submit'name='submit1' value='Submit'>
         
@@ -67,6 +73,12 @@ if(isset($_GET["update"]))
         
         <label for='review'>Review: </label>
         <textarea cols='70' rows='12' name='txtReview'></textarea></br>
+        
+        <label for='ingredient'>Ingredient: </label>
+        <textarea cols='70' rows='12' name='txtIngredient'></textarea></br>
+        
+        <label for='instruction'>Instruction: </label>
+        <textarea cols='70' rows='12' name='txtInstruction'></textarea></br>
         
         <input type='submit'name='submit1' value='Submit'>
         
