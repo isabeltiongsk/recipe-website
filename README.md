@@ -21,7 +21,7 @@ For details of this project, please refer to the [assignment report](https://git
 * Upload new image
 
 ## How to install
-1. Install the master branch package <br>
+1. Download the master branch package <br>
 2. Copy the files under your wamp/www <br>
 3. Import the sql files in the sql folder inside the database <br>
 4. Run index.php <br>
