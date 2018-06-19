@@ -10,7 +10,7 @@ For details of this project, please refer to the [assignment report](https://git
 ![alt text](https://github.com/isabeltiongsk/recipe-website/blob/master/demo/demo1.JPG) <br>
 ![alt text](https://github.com/isabeltiongsk/recipe-website/blob/master/demo/demo2.JPG) <br>
 
-### Features
+## Features
 * View recipes according to type(appetizer, main, dessert)
 * View recipe details (Click on recipe name)
 * GPS locator for nearest grocery shop
